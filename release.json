@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "version": "0.3.20",
+  "pluginId": "com.cutclub.premiere.prototype",
+  "channel": "prerelease",
+  "nativeAcceptanceApproved": false,
+  "installer": "Cut-Club-0.3.20.ccx",
+  "sha256": "c2ce4b070b9808fe4689c4379d36a0b7eb9e919e2b9ad9c0103c94c0d6336616",
+  "bytes": 535675149,
+  "host": {
+    "app": "premierepro",
+    "minVersion": "26.5.1"
+  },
+  "permissions": {
+    "localFileSystem": "request",
+    "ipc": {
+      "enablePluginCommunication": true
+    }
+  },
+  "knownLimitations": [
+    "Long-session native insertion stability remains unresolved. A native crash was observed during extended QA.",
+    "Windows and a second clean Mac are not validated.",
+    "Automatic update checking is not included."
+  ]
+}
