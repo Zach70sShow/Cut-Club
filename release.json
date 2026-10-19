@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "0.3.20",
+  "version": "0.3.21",
   "pluginId": "com.cutclub.premiere.prototype",
   "channel": "prerelease",
   "nativeAcceptanceApproved": false,
-  "installer": "Cut-Club-0.3.20.ccx",
-  "sha256": "c2ce4b070b9808fe4689c4379d36a0b7eb9e919e2b9ad9c0103c94c0d6336616",
-  "bytes": 535675149,
+  "installer": "Cut-Club-0.3.21.ccx",
+  "sha256": "6e36cde311b03750efaf7b9381fb8af73f963e7ba1fc5d338c31d0e0302243b7",
+  "bytes": 535675702,
   "host": {
     "app": "premierepro",
     "minVersion": "26.5.1"
@@ -20,6 +20,13 @@
   "knownLimitations": [
     "Long-session native insertion stability remains unresolved. A native crash was observed during extended QA.",
     "Windows and a second clean Mac are not validated.",
-    "Automatic update checking is not included."
-  ]
+    "Automatic update checking is not included.",
+    "Native acceptance on reported macOS 27.0 / Premiere 26.5.2 is pending."
+  ],
+  "guidedInstaller": {
+    "file": "Cut-Club-0.3.21-Direct-Install.zip",
+    "sha256": "a85c51e96aa6b5b5cd4612392ca58b9728ded7498bd28d696bb82ea5634a5801",
+    "bytes": 535691509
+  },
+  "releaseURL": "https://github.com/Zach70sShow/Cut-Club/releases/tag/v0.3.21"
 }

@@ -1,13 +1,17 @@
-# Cut Club 0.3.20 — review candidate
+# Cut Club 0.3.21 — source-less graphics hotfix prerelease
 
-Native edit batches now construct every action before registering any of them with Premiere. A controlled native probe showed that incremental registration can leave the first action applied when a later factory throws. The new shared helper prevents that construction-failure case, preserves action order and existing Undo stages, and never retries. Registration or commit failures still require the existing ownership-based cleanup.
+Native text/graphic clips may exist on a sequence without a ProjectItem. Previously, taking the placement preservation snapshot dereferenced getId on null and rejected every insertion into that sequence. Source-less clips now remain in the snapshot with their native name, match name, type and full timing; they are not skipped or assigned a fabricated project ID. Selecting a source-less clip no longer breaks readiness polling either.
 
-This is a narrow safety correction, not a solution to Premiere's intermittent invalid-script-object errors. Fresh-session and accumulated-session testing still reproduced failures at clone factories, including ordinary separate QA-button clicks. Cleanup preserved the prior QA timeline; long-session production acceptance remains blocked. No unproven carrier-retention, wrapper-refresh or bounded-retry experiment ships.
+Preflight failures now remain visible through the immediate refresh instead of disappearing behind Ready. A changed sequence/playhead/selection or new user input may update readiness, while committed-operation feedback retains its previous behavior.
 
-Includes the prior export/recovery and grid fixes, 25 original cards, 60 editable MOGRT files, six alpha movies and six supported formats. No new effect family, network permission or updater ships.
+Collision checks, real source identity for Cut Club assets, ownership checks before transfer/removal, serialized native work and Undo stages remain in place. No effect content or permissions changed.
 
-Regression tests and the native construction-failure probe passed. Official package, installed acceptance and file-integrity results are recorded separately when complete. This remains a prerelease: reference sign-off, sustained physical hover, native insertion stability, second-machine/fonts and update migration need review.
+Validation: the exact reported null-getId failure and the overwritten-error case failed before the patch and pass afterward. Thirty JavaScript test runners pass, including a complete simulated configured-transition workflow with an unrelated source-less graphic and tests that snapshot changes and unreadable owned sources remain rejected. Package integrity and installed/native usability are separate gates.
 
-Release hygiene: local last-known-project paths and unrelated QA media were removed from our native source containers. MOGRT preview movies have their authoring XMP removed without changing encoded frames, sample tables or offsets. All editable project payloads and definitions remain byte-exact. Packaging now checks local home-path metadata in compressed native sources and nested MOGRT containers. This bounded hygiene check is not a general sensitive-data detector. Native acceptance is recorded separately.
+This is a review candidate. Native testing on the reported macOS 27.0 / Premiere 26.5.2 machine is still required. Other previously documented native handle/insertion reliability issues remain unresolved; this patch does not claim to fix those.
 
-Native hygiene acceptance: all six regenerated source formats placed with independent native values and full-white flash peaks; all 60 MOGRT variants inserted and produced correctly sized hold frames, reviewed with alpha compositing. Original and sanitized Character Rise exports from fresh projects were pixel-identical. These checks do not establish exhaustive animation/control acceptance. The official Adobe CCX is built and installed; 3,663 source/archive/installed files match. Initial installed startup was observed; repeat-insertion and panel-reopening acceptance for this installed version remain pending.
+Install using Adobe UPIA or Creative Cloud with Premiere saved and closed. Do not edit installed plugin folders. Keep 0.3.20 for rollback. Test a saved duplicate project containing plain Premiere text/graphics: insert twice, inspect preservation of text and prior edits, and verify Undo/Redo.
+
+## Guided installation
+
+Download Cut-Club-0.3.21-Direct-Install.zip, fully extract it, and open START-HERE.html. A guided Terminal script invokes Adobe’s official UPIA installer after local checks and a typed INSTALL confirmation. The exact same CCX is also available separately. No custom Apple-signed app or Developer Mode is required for this route. No automatic updater ships.
