@@ -1,17 +1,20 @@
-# Cut Club 0.3.21 — source-less graphics hotfix prerelease
+# Cut Club 0.3.22 — text/graphic insertion fix
 
-Native text/graphic clips may exist on a sequence without a ProjectItem. Previously, taking the placement preservation snapshot dereferenced getId on null and rejected every insertion into that sequence. Source-less clips now remain in the snapshot with their native name, match name, type and full timing; they are not skipped or assigned a fabricated project ID. Selecting a source-less clip no longer breaks readiness polling either.
+Fixes a second null-ProjectItem failure: after inserting a transition, Cut Club could incorrectly check unrelated native text or graphics on the destination track as if they were Cut Club layers. These clips are now handled separately, while preservation checks for existing clips and ownership checks for the inserted transition remain active. Includes the earlier source-less snapshot and persistent error-message fixes.
 
-Preflight failures now remain visible through the immediate refresh instead of disappearing behind Ready. A changed sequence/playhead/selection or new user input may update readiness, while committed-operation feedback retains its previous behavior.
+## Verified
 
-Collision checks, real source identity for Cut Club assets, ownership checks before transfer/removal, serialized native work and Undo stages remain in place. No effect content or permissions changed.
+- Four Side Current insertions in a real test sequence containing native text with a null ProjectItem: Add, search-card double-click and repeated insertion without reload.
+- Insertion onto the same track as the text graphic, outside its interval.
+- All 144 original timeline items retained their tracks, timing, source ranges and names.
+- Two placement Undo steps and Redo restored the expected timelines; animated blur controls read back correctly.
+- All 30 JavaScript test files / 38 runner entries pass, including the regression that fails against published 0.3.21.
+- Official Adobe CCX installed successfully; all 3,663 installed files match the package/source. Premiere restarted and the saved test sequence and installed panel reopened. No additional insertion was performed after that restart.
 
-Validation: the exact reported null-getId failure and the overwritten-error case failed before the patch and pass afterward. Thirty JavaScript test runners pass, including a complete simulated configured-transition workflow with an unrelated source-less graphic and tests that snapshot changes and unreadable owned sources remain rejected. Package integrity and installed/native usability are separate gates.
+Native testing was on Premiere 26.5.1 / macOS 27.0.1. The reported second computer running Premiere 26.5.2 / macOS 27.0 still needs validation. This is a prerelease, not a claim that every native reliability issue is resolved.
 
-This is a review candidate. Native testing on the reported macOS 27.0 / Premiere 26.5.2 machine is still required. Other previously documented native handle/insertion reliability issues remain unresolved; this patch does not claim to fix those.
+## Install
 
-Install using Adobe UPIA or Creative Cloud with Premiere saved and closed. Do not edit installed plugin folders. Keep 0.3.20 for rollback. Test a saved duplicate project containing plain Premiere text/graphics: insert twice, inspect preservation of text and prior edits, and verify Undo/Redo.
+Download **Cut-Club-0.3.22-Direct-Install.zip**, extract it, and open **START-HERE.html**. Save and close Premiere before running the included script according to the guide. It invokes Adobe's official installer and does not require UXP Developer Mode or an Apple Developer ID. Double-clicking a CCX alone is not a dependable installation flow.
 
-## Guided installation
-
-Download Cut-Club-0.3.21-Direct-Install.zip, fully extract it, and open START-HERE.html. A guided Terminal script invokes Adobe’s official UPIA installer after local checks and a typed INSTALL confirmation. The exact same CCX is also available separately. No custom Apple-signed app or Developer Mode is required for this route. No automatic updater ships.
+The guide must be opened manually; this release does not yet provide the requested native installer window. No automatic updater ships. Windows, fresh-machine installation and extended-session reliability remain unvalidated. Back up your personal library and test on a duplicate project.

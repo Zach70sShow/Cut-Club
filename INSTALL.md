@@ -1,8 +1,8 @@
-# Install Cut Club 0.3.21 on Mac
+# Install Cut Club 0.3.22 on Mac
 
 1. Install Adobe Creative Cloud Desktop and Premiere Pro 26.5.1 or later. This guided flow requires macOS 13 or later and 3 GB of free space. Windows is not validated.
 2. Export your personal Cut Club library if you have one. Save and close Premiere. If you previously loaded Cut Club through UXP Developer Tools, unload/remove that development registration; preserve your source files.
-3. Download **Cut-Club-0.3.21-Direct-Install.zip** and fully extract it. Keep all files together. Open **START-HERE.html** for the illustrated step-by-step guide.
+3. Download **Cut-Club-0.3.22-Direct-Install.zip** and fully extract it. Keep all files together. Open **START-HERE.html** for the illustrated step-by-step guide.
 4. Open Terminal. Type `bash` followed by a space, drag **Install-Cut-Club.command** from the extracted folder into Terminal, then press Return. The script checks the bundled CCX checksum, Adobe's installer, compatible Premiere, free space and whether Premiere is closed. It asks you to type **INSTALL** before invoking Adobe's official UPIA installer. No Developer Mode, Apple Developer ID or custom unsigned application is required.
 5. Wait for the script's confirmed success. Do not start another installation at the same time. Reopen Premiere and choose **Window → UXP Plugins → Cut Club**.
 6. Use a saved duplicate test project containing real footage and a plain Premiere text/graphic clip. Place the playhead on a covered cut with enough footage on both sides (20 frames each for a default 40-frame transition). Try the Add button and double-click, insert again at a second cut, and check text preservation and Undo/Redo. Follow the actual Undo count shown by the panel.

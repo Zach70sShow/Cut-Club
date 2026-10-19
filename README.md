@@ -1,18 +1,18 @@
-# Cut Club 0.3.21
+# Cut Club 0.3.22
 
 Original transitions, editable motion graphics, overlays and a personal asset library for Adobe Premiere Pro.
 
-[Download 0.3.21](https://github.com/Zach70sShow/Cut-Club/releases/tag/v0.3.21) · [Installation](INSTALL.md) · [Release notes](RELEASE-NOTES.md) · [Report an issue](https://github.com/Zach70sShow/Cut-Club/issues)
+[Download 0.3.22](https://github.com/Zach70sShow/Cut-Club/releases/tag/v0.3.22) · [Installation](INSTALL.md) · [Release notes](RELEASE-NOTES.md) · [Report an issue](https://github.com/Zach70sShow/Cut-Club/issues)
 
 ## Status: prerelease
 
-This hotfix handles plain Premiere text/graphic clips that have no ProjectItem and keeps insertion errors visible. Automated regressions pass; native acceptance on the reported macOS 27.0 / Premiere 26.5.2 computer is pending. Other intermittent native insertion/handle failures and the previously observed extended-session crash are not declared fixed. Save and test a duplicate project first. Windows is not validated.
+This hotfix handles plain Premiere text/graphic clips that have no ProjectItem and keeps insertion errors visible. Live Add, search double-click, repeat insertion and Undo/Redo passed on Premiere 26.5.1 / macOS 27.0.1 with native source-less text present. The installed CCX was verified and reopened successfully. Acceptance on the reported macOS 27.0 / Premiere 26.5.2 computer is pending. Other intermittent native insertion/handle failures and the previously observed extended-session crash are not declared fixed. Save and test a duplicate project first. Windows is not validated.
 
 ## Install on Mac
 
-Download **Cut-Club-0.3.21-Direct-Install.zip**, fully extract it, and open **START-HERE.html**. The bundle includes the plugin and a guided script that calls Adobe's official installer. The guide explains the Terminal steps; double-clicking a CCX alone is not the required workflow. No Apple Developer ID or UXP Developer Mode is needed for this route. Adobe Creative Cloud Desktop, macOS 13 or later, and Premiere Pro 26.5.1 or later are required. Save and close Premiere before installing.
+Download **Cut-Club-0.3.22-Direct-Install.zip**, fully extract it, and open **START-HERE.html**. The bundle includes the plugin and a guided script that calls Adobe's official installer. The guide explains the Terminal steps; double-clicking a CCX alone is not the required workflow. No Apple Developer ID or UXP Developer Mode is needed for this route. Adobe Creative Cloud Desktop, macOS 13 or later, and Premiere Pro 26.5.1 or later are required. Save and close Premiere before installing.
 
-The standalone **Cut-Club-0.3.21.ccx** is also provided for Adobe-managed installation. Do not install both copies separately. Read INSTALL.md first.
+The standalone **Cut-Club-0.3.22.ccx** is also provided for Adobe-managed installation. Do not install both copies separately. Read INSTALL.md first.
 
 ## Included
 

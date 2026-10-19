@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "0.3.21",
+  "version": "0.3.22",
   "pluginId": "com.cutclub.premiere.prototype",
   "channel": "prerelease",
   "nativeAcceptanceApproved": false,
-  "installer": "Cut-Club-0.3.21.ccx",
-  "sha256": "6e36cde311b03750efaf7b9381fb8af73f963e7ba1fc5d338c31d0e0302243b7",
-  "bytes": 535675702,
+  "installer": "Cut-Club-0.3.22.ccx",
+  "sha256": "382dc762762610af7dd44057a9e860103d8d8dd30317df6029faf586f66cf809",
+  "bytes": 535675842,
   "host": {
     "app": "premierepro",
     "minVersion": "26.5.1"
@@ -24,9 +24,11 @@
     "Native acceptance on reported macOS 27.0 / Premiere 26.5.2 is pending."
   ],
   "guidedInstaller": {
-    "file": "Cut-Club-0.3.21-Direct-Install.zip",
-    "sha256": "a85c51e96aa6b5b5cd4612392ca58b9728ded7498bd28d696bb82ea5634a5801",
-    "bytes": 535691509
+    "file": "Cut-Club-0.3.22-Direct-Install.zip",
+    "sha256": "ea21148d98582df54a485a9570719397ff70e50933ae5f80b09f2c7e39d57cc9",
+    "bytes": 535691646
   },
-  "releaseURL": "https://github.com/Zach70sShow/Cut-Club/releases/tag/v0.3.21"
+  "releaseURL": "https://github.com/Zach70sShow/Cut-Club/releases/tag/v0.3.22",
+  "verifiedLocalHost": "26.5.1",
+  "installedPackageVerified": true
 }
